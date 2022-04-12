@@ -1,0 +1,33 @@
+{
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": ["get"]
+    },
+    {
+      "name": "srcImage",
+      "type": "blob",
+      "path": "images/src.jpeg",
+      "connection": "StorageConnectionString",
+      "direction": "in",
+      "dataType": "binary"
+    },
+    {
+      "name": "dstImage",
+      "type": "blob",
+      "path": "images/dst.jpeg",
+      "connection": "StorageConnectionString",
+      "direction": "out",
+      "dataType": "binary"
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "$return"
+    }
+  ],
+  "scriptFile": "../dist/ImageResizeBind/index.js"
+}
